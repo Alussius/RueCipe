@@ -16,6 +16,7 @@ router.get("/", (req, res) => {
 
 // CREATE ROUTE - CREATE THE RECIPE DATA IN THE DB
 router.post("/", middleware.isLoggedIn, (req, res) => {
+    console.log("Test");
     let newRecipe = {
         name: req.body.name,
         image: req.body.image,
