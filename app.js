@@ -20,7 +20,11 @@ let commentRoutes = require("./routes/comments"),
 // DB CONFIG
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect(DATABASEURL).then(() => {
+    console.log("Connected to AtlasDB!");
+}).catch(err => {
+    console.log('ERROR:', err.message);
+});
 /*mongoose.connect('mongodb+srv://dbRue:dbPW32@cluster0-tfzsv.mongodb.net/test?retryWrites=true&w=majority').then(() => {
     console.log("Connected to AtlasDB!");
 }).catch(err => {
