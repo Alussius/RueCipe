@@ -1,0 +1,30 @@
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+<div class="container-fluid">
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Welcome to RueCipe</h1>
+			<p>Where you can view or post home-made or professional recipes from all over the world</p>
+			<a class="btn btn-primary btn-lg" href="/recipes/new">Add New Recipe</a>
+		</div>
+	</div>
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+		<% recipes.forEach((recipe) => { %>
+			<div class="col-lg-2 col-md-3 col-sm-4">
+				<div class="thumbnail">
+					<img src="<%= recipe.image %>">
+					<div class="caption">
+						<h4><%= recipe.name %></h4>
+						<p><%= recipe.description.substring(0,100) %>...</p>
+					</div>
+					<p>
+						<a href="/recipes/<%= recipe._id %>" class="btn btn-primary">More Info</a>
+					</p>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>
