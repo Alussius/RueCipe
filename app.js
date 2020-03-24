@@ -20,7 +20,7 @@ let commentRoutes = require("./routes/comments"),
 // DB CONFIG
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
-mongoose.connect(DATABASEURL).then(() => {
+mongoose.connect(process.env.DATABASEURL).then(() => {
     console.log("Connected to AtlasDB!");
 }).catch(err => {
     console.log('ERROR:', err.message);
