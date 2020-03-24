@@ -6,7 +6,6 @@ let middleware = require("../middleware");
 // INDEX ROUTE - PRESENTS A LIST OF RECIPES AVAILABLE IN THE DB
 router.get("/", (req, res) => {
     Recipe.find({}, (err, recipes) => {
-    console.log("Test");
         if(err){
             console.log(err.message);
         } else {
