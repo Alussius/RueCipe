@@ -6,6 +6,7 @@ let middleware = require("../middleware");
 // INDEX ROUTE - PRESENTS A LIST OF RECIPES AVAILABLE IN THE DB
 router.get("/", (req, res) => {
     Recipe.find({}, (err, recipes) => {
+    console.log("Test");
         if(err){
             console.log(err.message);
         } else {
@@ -16,7 +17,6 @@ router.get("/", (req, res) => {
 
 // CREATE ROUTE - CREATE THE RECIPE DATA IN THE DB
 router.post("/", middleware.isLoggedIn, (req, res) => {
-    console.log("Test");
     let newRecipe = {
         name: req.body.name,
         image: req.body.image,
