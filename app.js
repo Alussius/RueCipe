@@ -67,6 +67,6 @@ app.get("*", (req, res) => {
     res.send("Error!!");
 });
 
-app.listen(process.env.PORT, process.env.IP, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is listening");
 });
