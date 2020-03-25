@@ -25,11 +25,6 @@ mongoose.connect(process.env.DATABASEURL).then(() => {
 }).catch(err => {
     console.log('ERROR:', err.message);
 });
-/*mongoose.connect('mongodb+srv://dbRue:dbPW32@cluster0-tfzsv.mongodb.net/test?retryWrites=true&w=majority').then(() => {
-    console.log("Connected to AtlasDB!");
-}).catch(err => {
-    console.log('ERROR:', err.message);
-});*/
 
 // seedDB();
 
